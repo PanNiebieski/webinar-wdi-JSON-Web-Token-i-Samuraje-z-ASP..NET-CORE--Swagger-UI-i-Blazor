@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>JSON Web Token i Samuraje z ASP.NET CORE, Swagger UI i Blazor</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,900&amp;subset=latin-ext" rel="stylesheet" />
+    <!-- Shower Theme -->
+    <link rel="stylesheet" href="vendors/shower-ribbon/styles/screen-16x9.css" />
+    <link rel="stylesheet" href="vendors/shower-CezaryWalenciuk/styles/main.css" />
+    <!-- Prism.js -->
+    <link rel="stylesheet" href="vendors/prism/prism-my.css" />
+    <link rel="stylesheet" href="vendors/prism/custom-prism.css" />
+    <link rel="stylesheet" href="codegrid.css" />
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>JSON Web Token i Samuraje z ASP.NET CORE, Swagger UI i Blazor</h1>
+        <p></p>
+    </header>
+
+    <section class="slide front-page">
+
+        <div class="details">
+            <!-- 1. Avatar -->
+
+
+            <h2>Cezary Walenciuk</h2>
+
+            <!-- 3. Presentation title -->
+            <h2 class="bigbig"><strong style="font-size: 35px;  line-height: 1.3;">
+
+                    <span class="titlec1">JSON Web Token i Samuraje z </span>
+                    <br />
+                    <span class="titlec5">ASP.NET CORE, Swagger UI i Blazor</span>
+                    <span class="titlec3"></span></strong></h2>
+
+
+
+            <!-- 5. Contact the speaker -->
+            <h2><a href="https://twitter.com/WalenciukC">@walenciukC</a></h2>
+        </div>
+        <div>
+
+
+            <!-- 2. Speaker -->
+
+        </div>
+        <div class="imag">
+            <img src="images/my-avatar.jpg" alt="Speaker">
+        </div>
+    </section>
+
+
+
+    <section class="slide conicG2">
+        <span class="shout colors" >Dlaczego potrzebujemy Json Web Tokenów
+            <br /> <span> 
+                🤫
+        </span></span>
+    </section>
+    <section class="slide conicG2">
+        <span class="shout colors" >Problem bezstanowego protokołu HTTP
+            <br />   <span> 
+            😳
+        </span></span>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/j1.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section> 
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/j2.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section> 
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/j3.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section> 
+    <section class="slide conicG2">
+        <span class="shout colors" >Problem skalowania w chmurze
+            <br /> <span> 
+            😩
+        </span></span>
+    </section>
+    <section class="slide creamGG   compact ">
+        <h2>Mamy dwa typy skalowania</h2>
+        <ol class="nonumbers">
+            <li class="next">Vertical Scaling : dodajemy zasoby do jednego serwera</li>
+            <li class="next">Horizontal Scaling : dodajesz nowy serwer, a ruch sieciowy jest kontrolowany przez load-balancer</li>
+        </ol>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/j4.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section> 
+    <section class="slide creamPPPGragient">
+        <span class="shout colors" >Lepsze rozwiązanie to JWT
+            <br /><span> 
+                🤠
+        </span></span>
+    </section>
+    <section class="slide creamGG   compact ">
+        <h2>JSON Web Token składa się :</h2>
+        <ol class="nonumbers">
+            <li class="next">Header</li>
+            <li class="next">Payload</li>
+            <li class="next">Signature</li>
+        </ol>
+    </section>
+    <section class="slide creamPPPGragient">
+        <span class="shout colors" >Zobaczmy nasze API
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+    <section class="slide creamPPPGragient">
+        <span class="shout colors" >...ale najpierw Clean Architecture<br />
+           <span> 
+            Samuraju to ty znasz ?
+        </span></span>
+    </section>
+    <section class="slide creamPP" >
+        <figure>
+            <img class="cover" src="pictures/circular/circular desing-0-t.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Onion Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide creamPP" >
+        <figure>
+            <img class="cover" src="pictures/circular/circular desing-t.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Onion Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide creamPP" >
+        <figure>
+            <img class="cover" src="pictures/circular/circular desing-1-t.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Onion Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide creamPPPGragient">
+        <span class="shout colors" >Dlaczego REST API ?<br />
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/normal/cochcemy.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+
+
+    <section class="slide creamPPPGragient">
+        <span class="shout colors" >Jak testować REST API<br />
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/fidlder.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide creamGG">
+        <span class="shout colors" ><span>Dodajmy Swagger UI 😎
+        </span></span>
+    </section>
+
+    
+    <section class="slide creamPPPGragient">
+        <span class="shout colors" >Co tam panie w aplikacji Blazor ?<br />
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+    <section class="slide creamGG">
+        <span class="shout colors" ><span>Blazor pozwala stworzyć Tobie aplikację SPA w C#.<br />
+            WebAssembly
+        </span></span>
+    </section>
+    <section class="slide creamGG   compact ">
+        <h2>Zalety :</h2>
+        <ol class="nonumbers">
+            <li class="next">Wszystko w C#</li>
+            <li class="next">Aplikacja SPA</li>
+        </ol>
+    </section>
+    <section class="slide creamGG   compact ">
+        <h2>Wady :</h2>
+        <ol class="nonumbers">
+            <li class="next">Plik do pobrania WebAssembly waży przynajmniej więcej niż 9MB</li>
+            <li class="next">Mało pomocnych materiałów</li>
+            <li class="next">Nie wiadomo czy ta technologia się przyjmnie</li>
+        </ol>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/blazor/F3.PNG" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide creamGG   compact ">
+        <h2>Problemy :</h2>
+        <ol class="nonumbers">
+            <li class="next">Visual Studio nie chce mi Debugować kodu Blazor (troche jest z tym zabawy)</li>
+            <li class="next">Projekt czasem głupieje i zaznacza rzeczy na czerwono</li>
+            <li class="next">Ze wszystkich projektów ten zajął mi najwięcej czasu</li>
+        </ol>
+    </section>
+    <section class="slide creamPP " >
+        <span class="shout colors smallerfont2" ><span>
+            Nie mam ochoty pisać kodu HTTPClinet do mojego API w ASP.NET Core
+            <br /><br />Na pomoc przychodzi NSwag
+            
+        </span></span>
+    </section>
+    <section class="slide creamPP  fullscreen">
+        <div class="grid-containerOnlyThree ">
+            <div class="ImageOnlyTwo1 "><img  src="pictures/iconsFr/nswag1.png" /></div>
+            <div class="TitleOnlyTwo"><h3>NSwag</h3></div>
+            <div class="TextOnlyTwo1 "><h3>Generator kodu dla API</h3></div>
+          </div>
+    </section>
+    <section class="slide creamPP  fullscreen">
+        <div class="grid-containerOnlyThree ">
+            <div class="ImageOnlyTwo1 "><img  src="pictures/iconsFr/nswag1.png" /></div>
+            <div class="ImageOnlyTwo2 "> <img src="pictures/iconsFr/nswag2.png" /></div>
+            <div class="TitleOnlyTwo"><h3>NSwag</h3></div>
+            <div class="TextOnlyTwo1 "><h3>Generator kodu dla API</h3></div>
+            <div class="TextOnlyTwo2 "><h3>Bazuje on na specyfikacji OpenAPI</h3></div>
+          </div>
+    </section>
+    <section class="slide creamPP  fullscreen">
+        <div class="grid-containerOnlyThree ">
+            <div class="ImageOnlyTwo1 "><img  src="pictures/iconsFr/nswag1.png" /></div>
+            <div class="ImageOnlyTwo2 "> <img src="pictures/iconsFr/nswag2.png" /></div>
+            <div class="ImageOnlyThree "> <img src="pictures/iconsFr/nswag3.png" /></div>
+            <div class="TitleOnlyTwo"><h3>NSwag</h3></div>
+            <div class="TextOnlyTwo1 "><h3>Generator kodu dla API</h3></div>
+            <div class="TextOnlyTwo2 "><h3>Bazuje on na specyfikacji OpenAPI</h3></div>
+            <div class="TextOnlyThree "><h3>Działa dla TypeScript<br /> i .NET CORE</h3></div>
+          </div>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/NSWAG-01.PNG" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/NSWAG-02.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/NSWAG-03.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide" style="background-color:black">
+        <figure>
+            <img class="cover" src="pictures/NSWAG-04.png" alt="blog">
+            <figcaption class="white">Copyright © 2021 Cezary Walenciuk</figcaption>
+        </figure>
+    </section>
+    <section class="slide creamPP " >
+        <span class="shout colors " ><span>
+            Wygenerowaną klasę warto przerobić
+            <br /><br />
+            👿
+        </span></span>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle PP PP"> 
+                <h2 class="headerCODE PP PP">Edycja wygenerowanej klasy</h2>
+            </div>
+            <div class="PlaceCodeHere">
+                <pre style="font-size: 19px;overflow: hidden;  " class="language-csharp">
+                    <code style="line-height: 19px !important;">
+                        public partial interface IClient
+                        {
+                            System.Net.Http.HttpClient HttpClient { get; }
+
+                            ......
+                    </code>
+                </pre>
+            </div>
+            <div class="AnswerCode">
+                <div class="pytanie">
+                    <h3></h3>
+                </div>
+                <div class="odpowiedz">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle PP PP"> 
+                <h2 class="headerCODE PP PP">Edycja wygenerowanej klasy PRZED</h2>
+            </div>
+            <div class="PlaceCodeHere">
+                <pre style="font-size: 19px;overflow: hidden;  " class="language-csharp">
+                    <code style="line-height: 19px !important;">
+                        public partial class Client : IClient
+                        {
+                            private string _baseUrl = &quot;&quot;;
+                            private System.Net.Http.HttpClient _httpClient;
+                            private System.Lazy&lt;Newtonsoft.Json.JsonSerializerSettings&gt; _settings;
+                            
+                            public Client(string baseUrl, System.Net.Http.HttpClient httpClient)
+                            {
+                                BaseUrl = baseUrl; 
+                                _httpClient = httpClient; 
+                                _settings = new System.Lazy&lt;Newtonsoft.Json.JsonSerializerSettings&gt;(CreateSerializerSettings);
+                            }
+                    </code>
+                </pre>
+            </div>
+            <div class="AnswerCode">
+                <div class="pytanie">
+                    <h3></h3>
+                </div>
+                <div class="odpowiedz">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide prism over bhgry">
+        <div class="grid-container">
+            <div class="HeaderTitle PP PP"> 
+                <h2 class="headerCODE PP PP">Edycja wygenerowanej klasy PO</h2>
+            </div>
+            <div class="PlaceCodeHere">
+                <pre style="font-size: 19px;overflow: hidden;  " class="language-csharp">
+                    <code style="line-height: 19px !important;">
+                        public partial class Client : IClient
+                        {
+                            private string _baseUrl = &quot;&quot;;
+                            private System.Net.Http.HttpClient _httpClient;
+                            private System.Lazy&lt;Newtonsoft.Json.JsonSerializerSettings&gt; _settings;
+                            
+                            public Client(System.Net.Http.HttpClient httpClient)
+                            {
+                            
+                                _httpClient = httpClient;
+                                _settings = new System.Lazy&lt;Newtonsoft.Json.JsonSerializerSettings&gt;(CreateSerializerSettings);
+                            }
+                    </code>
+                </pre>
+            </div>
+            <div class="AnswerCode">
+                <div class="pytanie">
+                    <h3></h3>
+                </div>
+                <div class="odpowiedz">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide conicG2">
+        <span class="shout colors" >Jak tworzymy Tokeny ?<br />
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+    <section class="slide conicG2">
+        <span class="shout colors" >Swagger UI i Tokeny ?<br />
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+    <section class="slide conicG2">
+        <span class="shout colors" >Blazor i Tokeny ?<br />
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+
+    <section class="slide creamPPPGragient">
+        <span class="shout colors" >Koniec ?<br />
+           <span> 
+            Samuraju
+        </span></span>
+    </section>
+
+    <!-- <div class="progress"></div> -->
+    <footer class="badge badge-top-left">
+        <a href="#" class="fullscreen">Fullscreen</a>
+    </footer>
+
+    <script src="vendors/gamepad/gamepad.js"></script>
+    <script src="vendors/shower/shower.min.js"></script>
+    <script src="vendors/shower-gamepad/shower.gamepad.js"></script>
+
+    <!-- Prism.js -->
+    <script src="vendors/prism/prism.js"></script>
+    <script src="vendors/prism/custom-prism.js"></script>
+
+</body>
+
+</html>
